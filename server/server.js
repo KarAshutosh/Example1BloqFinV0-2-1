@@ -28,7 +28,17 @@ app.post("/create-checkout-session", async (req, res) => {
                 slippageLimit: 0.05,
                 successURL: 'http://localhost:5500/User/success.html',
                 cancelURL: 'http://localhost:5500/User/cancel.html',
-                name: "Rare in-App Item"
+                name: "Rare in-App Item",
+                input0: "",
+                input1: "",
+                input2: "",
+                input3: "",
+                input4: "",
+                input5: "",
+                input6: "",
+                input7: "",
+                input8: "",
+                input9: "",
             }
         ,
         }),
