@@ -14,7 +14,7 @@ app.use(
 app.post("/create-checkout-session", async (req, res) => {
     
 
-    fetch("http://paybloq.us-west-1.elasticbeanstalk.com/payment/62fa188609190a14ff23e798", {
+    fetch("http://payment-api.bloqfin.com/payment/62fa188609190a14ff23e798", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
