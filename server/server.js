@@ -11,7 +11,11 @@ app.use(
   })
 )
 
-app.post("/create-checkout-session", async (req, res) => {
+app.get("/", (req, res) => {
+   res.status(301).redirect("http://bloqfin.com")
+}) 
+
+app.post("/1/create-checkout-session", async (req, res) => {
     
 
     fetch("http://payment-api.bloqfin.com/payment/62fa188609190a14ff23e798", {
@@ -26,8 +30,8 @@ app.post("/create-checkout-session", async (req, res) => {
                 priceInEth: 0.0001,
                 gasLimit: 0.001,
                 slippageLimit: 0.05,
-                successURL: 'http://localhost:5500/User/success.html',
-                cancelURL: 'http://localhost:5500/User/cancel.html',
+                successURL: 'http://localhost:5500/success.html',
+                cancelURL: 'http://localhost:5500/cancel.html',
                 name: "Rare in-App Item",
                 input0: "",
                 input1: "",
@@ -58,6 +62,7 @@ app.post("/create-checkout-session", async (req, res) => {
 })
 
 
-console.log("Server 5000 ON")
+console.log("Server ON")
 
-app.listen(5000)
+const PORT = process.env.PORT || 8080
+app.listen(PORT)
