@@ -2,7 +2,7 @@ const checkoutBth = document.getElementById("checkout-button")
 
 checkoutBth.addEventListener("click", () => {
 //      fetch("http://bloqfin-examples.us-west-1.elasticbeanstalk.com/1/create-checkout-session", {
-    fetch("http://localhost:5000/create-checkout-session", {
+    fetch("http://localhost:8080/create-checkout-session", {
 
         method: "POST",
         headers: {
