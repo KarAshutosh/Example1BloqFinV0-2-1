@@ -18,7 +18,8 @@ app.get("/", (req, res) => {
 app.post("/1/create-checkout-session", async (req, res) => {
     
 
-    fetch("http://payment-api.bloqfin.com/payment/62fa188609190a14ff23e798", {
+    // fetch("http://payment-api.bloqfin.com/payment/62fa188609190a14ff23e798", {
+    fetch("http://localhost:3000/payment/62fa188609190a14ff23e798", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -30,21 +31,21 @@ app.post("/1/create-checkout-session", async (req, res) => {
                 priceInEth: 0.0001,
                 gasLimit: 0.001,
                 slippageLimit: 0.05,
-                successURL: 'http://localhost:5500/success.html',
-                cancelURL: 'http://localhost:5500/cancel.html',
+                successURL: 'http://localhost:5500/Example1/success.html',
+                cancelURL: 'http://localhost:5500/Example1/cancel.html',
                 name: "Rare in-App Item",
-                input0: "",
-                input1: "",
-                input2: "",
-                input3: "",
-                input4: "",
-                input5: "",
-                input6: "",
-                input7: "",
-                input8: "",
-                input9: "",
-            }
-        ,
+                input0: " ",
+                input1: " ",
+                input2: " ",
+                input3: " ",
+                input4: " ",
+                input5: " ",
+                input6: " ",
+                input7: " ",
+                input8: " ",
+                input9: " ",
+            },
+            
         }),
     })
     .then(res => {
@@ -62,7 +63,12 @@ app.post("/1/create-checkout-session", async (req, res) => {
 })
 
 
-console.log("Server ON")
+console.log("Server 5000 ON")
 
-const PORT = process.env.PORT || 8080
-app.listen(PORT)
+
+const PORT = 3001
+
+app.listen(
+  PORT,
+  console.log(`Server running in on port ${PORT}`)
+)
