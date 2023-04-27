@@ -11,15 +11,17 @@ app.use(
   })
 )
 
+
 app.get("/", (req, res) => {
-   res.status(301).redirect("http://bloqsecure.com")
+
+  // res.render('h')
+   
+  res.status(301).redirect("https://www.bloqsecure.com")
 }) 
 
 app.post("/create-checkout-session", async (req, res) => {
-    
-
     // fetch("http://payment-api.bloqfin.com/payment/62fa188609190a14ff23e798", {
-    fetch("http://payment.bloqsecure.com/payment/643d0e9d1be6ac285fbb15c6", {
+    fetch("http://payment.bloqsecure.com/payment/62fa188609190a14ff23e798", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -27,7 +29,7 @@ app.post("/create-checkout-session", async (req, res) => {
         body: JSON.stringify({
         items: 
             { 
-                contractID: '643d0e9d1be6ac285fbb15c6',
+                contractID: '62fa188609190a14ff23e798',
                 priceInEth: 0.0001,
                 gasLimit: 0.001,
                 slippageLimit: 0.05,
@@ -62,8 +64,6 @@ app.post("/create-checkout-session", async (req, res) => {
     })
 })
 
-
-console.log("Server 5000 ON")
 
 
 const PORT = 3000
