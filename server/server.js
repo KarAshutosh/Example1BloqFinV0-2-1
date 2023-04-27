@@ -12,14 +12,14 @@ app.use(
 )
 
 app.get("/", (req, res) => {
-   res.status(301).redirect("http://bloqfin.com")
+   res.status(301).redirect("http://bloqsecure.com")
 }) 
 
-app.post("/1/create-checkout-session", async (req, res) => {
+app.post("/create-checkout-session", async (req, res) => {
     
 
     // fetch("http://payment-api.bloqfin.com/payment/62fa188609190a14ff23e798", {
-    fetch("http://localhost:3000/payment/62fa188609190a14ff23e798", {
+    fetch("http://payment.bloqsecure.com/payment/643d0e9d1be6ac285fbb15c6", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -31,8 +31,8 @@ app.post("/1/create-checkout-session", async (req, res) => {
                 priceInEth: 0.0001,
                 gasLimit: 0.001,
                 slippageLimit: 0.05,
-                successURL: 'http://localhost:5500/Example1/success.html',
-                cancelURL: 'http://localhost:5500/Example1/cancel.html',
+                successURL: 'http://localhost:5500/User/success.html',
+                cancelURL: 'http://localhost:5500/User/cancel.html',
                 name: "Rare in-App Item",
                 input0: " ",
                 input1: " ",
@@ -66,7 +66,7 @@ app.post("/1/create-checkout-session", async (req, res) => {
 console.log("Server 5000 ON")
 
 
-const PORT = 3001
+const PORT = 3000
 
 app.listen(
   PORT,
